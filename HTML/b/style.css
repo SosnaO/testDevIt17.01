@@ -1,0 +1,130 @@
+html {
+  height: 100%;
+}
+body {
+  margin: 5px;
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: auto;
+}
+.input {
+  height: 40px;
+  width: 70%;
+  margin-right: 10px;
+  border-radius: 5px;
+  border-width: 1px;
+}
+.select {
+  height: 40px;
+  width: 30%;
+  display: inline-flex;
+}
+.filter {
+  width: 100px;
+  background-color: white;
+  border-width: 1px;
+  border-right-width: 0px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.columns {
+  width: 100px;
+  background-color: white;
+  border-width: 1px;
+  border-right-width: 0px;
+}
+.sort {
+  width: 100px;
+  background-color: white;
+  border-width: 1px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.button {
+  height: 40px;
+  width: 40px;
+  background-color: white;
+  border-width: 1px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-weight: 900;
+}
+
+.table {
+  display: table;
+  margin-top: 10px;
+  width: 97%;
+  text-align: left;
+}
+.table-row {
+  display: table-row;
+}
+.table-cell {
+  display: table-cell;
+}
+.table-colgroup {
+  display: table-column-group;
+}
+.table-col {
+  display: table-column;
+}
+.checkbox {
+  width: 20px;
+  height: 15px;
+}
+.table-thead {
+  display: table-header-group;
+}
+.table-tr {
+  display: table-row;
+  height: 40px;
+}
+.table-th {
+  display: table-cell;
+  padding: 4px;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  vertical-align: middle;
+}
+.table-tbody {
+  display: table-row-group;
+}
+.table-tr {
+  display: table-row;
+}
+.table-td {
+  display: table-cell;
+  padding: 2px;
+  border-bottom: 1px solid #ddd;
+  vertical-align: middle;
+}
+.customer {
+  color: grey;
+}
+.circle {
+  background-color: #e8ebdd;
+  border-radius: 8px;
+  padding: 3px;
+}
+.circleHole {
+  background-color: #f3cd87;
+  border-radius: 8px;
+  padding: 3px;
+}
+.tags {
+  background-color: #e8ebdd;
+  border-radius: 3px;
+  padding: 4px;
+}
+.label {
+  display: table-cell;
+  padding: 4px;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  vertical-align: middle;
+}
