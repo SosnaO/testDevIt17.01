@@ -20,68 +20,40 @@ class ConcurencyQueue {
     }
   }
   //Обработка очереди
-  queuing() {
+  queuing(requestId) {
     return new Promise(resolve => {
-      let time = Math.floor(Math.random() * 10000) + 1;
+      let time = Math.floor(Math.random() * 10000);
       setTimeout(() => {
-        resolve(this);
+        resolve(requestId);
       }, time);
+      console.log('случайное время', time);
     });
   }
 }
 const concQueue = new ConcurencyQueue([]);
-concQueue
-  .queuing()
-  .then(value => {
-    value.queue(1);
-    console.log('добавление элемента 1', new Date(), concQueue.getConcurency());
-    return value;
-  })
-  .then(value => {
-    value.queue(2);
-    console.log('добавление элемента 2', new Date(), concQueue.getConcurency());
-    return value;
-  })
-  .then(value => {
-    value.queue(3);
-    console.log('добавление элемента 3', new Date(), concQueue.getConcurency());
-    return value;
-  })
-  .then(value => {
-    value.queue(4);
-    console.log('добавление элемента 4', new Date(), concQueue.getConcurency());
-    return value;
-  })
-  .then(value => {
-    value.queue(5);
-    console.log('добавление элемента 5', new Date(), concQueue.getConcurency());
-    return value;
-  });
 
-concQueue
-  .queuing()
-  .then(value => {
-    value.deQueue(1);
-    console.log('удаление 1 элемента', new Date(), concQueue.getConcurency());
-    return value;
-  })
-  .then(value => {
-    value.deQueue(2);
-    console.log('удаление 2 элемента', new Date(), concQueue.getConcurency());
-    return value;
-  })
-  .then(value => {
-    value.deQueue(3);
-    console.log('удаление 3 элемента', new Date(), concQueue.getConcurency());
-    return value;
-  })
-  .then(value => {
-    value.deQueue(4);
-    console.log('удаление 4 элемента', new Date(), concQueue.getConcurency());
-    return value;
-  })
-  .then(value => {
-    value.deQueue(5);
-    console.log('удаление 5 элемента', new Date(), concQueue.getConcurency());
-    return value;
-  });
+concQueue.queuing(1).then(value => {
+  concQueue.queue(value);
+  console.log('добавление элемента 1', new Date(), concQueue.getConcurency());
+});
+concQueue.queuing(2).then(value => {
+  concQueue.queue(value);
+  console.log('добавление элемента 2', new Date(), concQueue.getConcurency());
+});
+concQueue.queuing(3).then(value => {
+  concQueue.queue(value);
+  console.log('добавление элемента 3', new Date(), concQueue.getConcurency());
+});
+concQueue.queuing(4).then(value => {
+  concQueue.queue(value);
+  console.log('добавление элемента 4', new Date(), concQueue.getConcurency());
+});
+concQueue.queuing(5).then(value => {
+  concQueue.queue(value);
+  console.log('добавление элемента 5', new Date(), concQueue.getConcurency());
+});
+
+concQueue.queuing(2).then(value => {
+  concQueue.deQueue(value);
+  console.log('удаление элемента 2', new Date(), concQueue.getConcurency());
+});

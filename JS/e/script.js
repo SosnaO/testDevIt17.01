@@ -4,15 +4,16 @@
 function random(value) {
   function repetition() {
     let result = [];
-    for (let i = 0; i <= value; i++) {
-      let i = Math.floor(Math.random() * value) + 1;
-      if (!result.includes(i)) {
-        result.push(i);
+    while (result.length <= value) {
+      let i = Math.floor(Math.random() * (value + 1));
+      if (result.includes(i)) {
+        continue;
       } else {
-        console.log('result', result);
-        return console.log('Ошибка!!!');
+        result.push(i);
       }
+      if (result.length > value) break;
     }
+    console.log('result', result);
     return result;
   }
   repetition();
